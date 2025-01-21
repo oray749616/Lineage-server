@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json());
 
 // 错误处理
-app.use((err: Error, req: express.Request, res: express.Response, next: express.NextFunction) => {
+app.use((err: Error, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
   console.error(err.stack);
   res.status(500).json({ message: '服务器内部错误' });
 });
